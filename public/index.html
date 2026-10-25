@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Todo App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <header>
+      <h1>My Tasks</h1>
+      <p id="counter" class="counter">Loading...</p>
+    </header>
+
+    <div class="add-row">
+      <input id="todoInput" type="text" placeholder="What do you need to do?" autocomplete="off">
+      <input id="dueInput" type="datetime-local" title="Deadline (optional)">
+      <button id="addBtn">Add</button>
+    </div>
+
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-filter="all">All</button>
+      <button class="tab" data-filter="today">Today</button>
+      <button class="tab" data-filter="week">This Week</button>
+      <button class="tab" data-filter="month">This Month</button>
+      <button class="tab" data-filter="overdue">Overdue</button>
+    </div>
+
+    <ul id="todoList"></ul>
+    <p id="empty" class="empty hidden">No tasks here.</p>
+
+        <section class="habits">
+      <h2>🔁 Repeating reminders</h2>
+
+      <div class="habit-add">
+        <input id="habitText" type="text" placeholder="e.g. Read Quran" autocomplete="off">
+        <input id="habitTime" type="time" value="20:00" title="Reminder time">
+        <select id="habitRepeat">
+          <option value="daily">Every day</option>
+          <option value="weekly">Every week</option>
+          <option value="monthly">Every month</option>
+        </select>
+        <select id="habitWeekday" class="hidden">
+          <option value="0">Sunday</option>
+          <option value="1">Monday</option>
+          <option value="2">Tuesday</option>
+          <option value="3">Wednesday</option>
+          <option value="4">Thursday</option>
+          <option value="5">Friday</option>
+          <option value="6">Saturday</option>
+        </select>
+        <input id="habitMonthday" type="number" min="1" max="31" value="1" class="hidden" title="Day of the month">
+        <button id="habitAdd">Add</button>
+      </div>
+
+      <ul id="habitList"></ul>
+      <p id="habitEmpty" class="empty hidden">No repeating reminders yet. Try "Read Quran" every day.</p>
+    </section>
+
+  <script src="script.js"></script>
+  <script src="habits.js"></script>
+
+    <details class="settings">
+      <summary>🔔 Notification settings</summary>
+      <div class="settings-body">
+        <button id="enableNotif">Enable notifications</button>
+        <p id="notifStatus" class="status"></p>
+
+        <label class="opt">
+          <input type="checkbox" id="dailyOn" checked>
+          Daily summary at
+          <input type="time" id="dailyTime" value="09:00">
+        </label>
+
+        <label class="opt">
+          <input type="checkbox" id="monthlyOn" checked>
+          Monthly summary (once per month)
+        </label>
+
+        <label class="opt">
+          <input type="checkbox" id="dueOn" checked>
+          Remind me about deadlines (1 hour before + when overdue)
+        </label>
+      </div>
+    </details>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
