@@ -1,16 +1,19 @@
 {
   "name": "my-todo-app",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.0.0",
+  "description": "Todo app with deadlines, notifications and repeating reminders",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Marwan",
   "license": "ISC",
   "type": "commonjs",
+  "engines": {
+    "node": ">=22.5.0"
+  },
   "dependencies": {
     "express": "^5.3.0"
   }
